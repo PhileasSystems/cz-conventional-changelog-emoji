@@ -2,9 +2,10 @@
 
 [![Javascript](https://badges.frapsoft.com/javascript/code/javascript.svg?v=100)](https://github.com/ellerbrock/javascript-badges/) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badges/) [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)
 
-## [Angular Git Commit Guidelines](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#type) with Emojis 
+## [Angular Git Commit Guidelines](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#type) with Emojis
 
 *This is a fork from [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog).*
+Written by Maik Ellerbrock <opensource@frapsoft.com> (https://github.com/ellerbrock)
 
 
 ![commitizen emoji](https://github.frapsoft.com/top/commitizen-emoji.jpg?v=101)
@@ -33,15 +34,15 @@ the command add this to your package.json:
 
 ### Dude just let me use it
 
-No time for setting up all that stuff?  
+No time for setting up all that stuff?
 No worries! All that and lot more awesome stuff ready to use with [node-developer-boilerplate](https://github.com/ellerbrock/node-developer-boilerplate).
 
 ### Preview:
 
 feat(xxx): :sparkles: Features your commit message
-	
+
 fix(xxx): :bug: Bug Fixes
-	
+
 docs(xxx): :book: Documentation
 
 style: :gem: Styles
@@ -55,7 +56,7 @@ test(xxx): :rotating_light: Tests
 build(xxx): :construction_worker: Build
 
 ci(xxx): :computer: Continuous Integration
-    
+
 chore(xxx): :ticket: Chores
 
 revert(xxx): :back: Reverts

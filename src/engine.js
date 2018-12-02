@@ -84,7 +84,7 @@ module.exports = function (options) {
         var emoji = types[answers.type].description.split(' ')[0];
 
         // Hard limit this line
-        var head = (emoji + ' ' + answers.type + scope + ': ' + answers.subject.trim()).slice(0, maxLineWidth);
+        var head = (answers.type + scope + ': ' + emoji + ' ' + answers.subject.trim()).slice(0, maxLineWidth);
 
         // Wrap these lines at 100 characters
         var body = wrap(answers.body, wrapOptions);
