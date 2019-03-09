@@ -1,7 +1,7 @@
 {
   "name": "@phileas/cz-conventional-changelog-emoji",
   "description": "Commitizen adapter following the conventional-changelog format with emojis",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "main": "src/index.js",
   "author": "Adnene Khalfa <adnene@phileas.systems> (https://github.com/c10h22)",
   "homepage": "https://github.com/PhileasSystems/cz-conventional-changelog-emoji",
