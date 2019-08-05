@@ -19,7 +19,7 @@
     "commit": "git add --all && git status && git-cz"
   },
   "files": [
-    "dist"
+    "src"
   ],
   "keywords": [
     "angular",
