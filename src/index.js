@@ -1,28 +1,29 @@
-"format cjs";
-
-var engine = require('./engine');
-var conventionalCommitTypes = require('conventional-commit-types-emoji');
+const conventionalCommitTypes = require('conventional-commit-types-emoji');
+const engine = require('./engine');
 
 module.exports = engine({
   types: {
     ...conventionalCommitTypes.types,
     review: {
-      "description": "👌  Code changed after code review"
+      description: '👌  Code changed after code review',
     },
     upgrade: {
-      "description": "⬆️  Upgrade package.json dependency"
+      description: '⬆️  Upgrade package.json dependency',
     },
     downgrade: {
-      "description": "⬇️  Upgrade package.json dependency"
+      description: '⬇️  Upgrade package.json dependency',
     },
     deployment: {
-      "description": "🚀  Deploying stuff to remote environment"
+      description: '🌈  Deploying stuff to remote environment',
     },
     hotfix: {
-      "description": "🚑  Critical hotfix"
+      description: '🚑  Critical hotfix',
     },
     security: {
-      "description": "🔒  Changes affecting security, access, ACLs..."
-    }
-  }
+      description: '🔒  Changes affecting security, access, ACLs...',
+    },
+    wtf: {
+      description: '🧐 WTF changes other then previous changes types',
+    },
+  },
 });

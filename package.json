@@ -1,7 +1,7 @@
 {
   "name": "@phileas/cz-conventional-changelog-emoji",
   "description": "Commitizen adapter following the conventional-changelog format with emojis",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "main": "src/index.js",
   "author": "Adnene Khalfa <adnene@phileas.systems> (https://github.com/c10h22)",
   "homepage": "https://github.com/PhileasSystems/cz-conventional-changelog-emoji",
@@ -19,7 +19,7 @@
     "commit": "git add --all && git status && git-cz"
   },
   "files": [
-    "src"
+    "dist"
   ],
   "keywords": [
     "angular",
@@ -30,14 +30,43 @@
   "dependencies": {
     "conventional-commit-types-emoji": "^0.1.0",
     "lodash.map": "^4.6.0",
-    "longest": "^2.0.0",
+    "longest": "^2.0.1",
     "pad-right": "^0.2.2",
     "right-pad": "^1.0.1",
-    "word-wrap": "^1.1.0"
+    "word-wrap": "^1.2.3"
   },
   "devDependencies": {
-    "commitizen": "3.0.3",
-    "jshint": "2.9.4",
-    "standard-version": "4.3.0"
+    "@commitlint/config-conventional": "^7.5.0",
+    "commitizen": "3.1.1",
+    "commitlint": "^7.5.2",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.5.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "husky": "^2.1.0",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.17.0",
+    "standard-version": "5.0.2",
+    "webpack": "^4.30.0",
+    "webpack-bundle-analyzer": "^3.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./src/index.js"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --no-ignore --fix",
+      "git add --force"
+    ]
   }
 }
