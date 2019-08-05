@@ -1,4 +1,3 @@
-const path = require('path');
 // ESLint configuration
 // http://eslint.org/docs/user-guide/configuring
 module.exports = {
@@ -13,20 +12,11 @@ module.exports = {
   },
 
   rules: {
-    // Forbid the use of extraneous packages
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        packageDirs: [path.join(__dirname, './'), path.join(__dirname, './lambda/**')],
-      },
-    ],
-
     // Recommend not to leave any console.log in your code
     // Use console.error, console.warn and console.info instead
     // https://eslint.org/docs/rules/no-console
     'no-console': [
-      'error',
+      0,
       {
         allow: ['warn', 'error', 'info'],
       },
