@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/PhileasSystems/cz-conventional-changelog-emoji/compare/v0.0.7...v0.0.8) (2019-08-07)
+
+
+### Bug Fixes
+
+* **maxLentgh:** 🐛 Hardcoded for now to 200 ([c3f0451](https://github.com/PhileasSystems/cz-conventional-changelog-emoji/commit/c3f0451))
+
 ### [0.0.7](https://github.com/PhileasSystems/cz-conventional-changelog-emoji/compare/v0.0.6...v0.0.7) (2019-08-05)
 
 
