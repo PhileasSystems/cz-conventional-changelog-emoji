@@ -71,7 +71,7 @@ module.exports = options => {
           message: 'List any breaking changes or issues closed by this change:\n',
         },
       ]).then(function(answers) {
-        const maxLineWidth = 100;
+        const maxLineWidth = 200;
 
         const wrapOptions = {
           trim: true,
