@@ -5,9 +5,6 @@ const rightPad = require('right-pad');
 
 const { loadCommitLintConfig } = require('./lib/utils');
 
-// This can be any kind of SystemJS compatible module.
-// We use Commonjs here, but ES6 or AMD would do just
-// fine.
 module.exports = options => {
   const { types } = options;
 
@@ -71,7 +68,7 @@ module.exports = options => {
           name: 'footer',
           message: 'List any breaking changes or issues closed by this change:\n',
         },
-      ]).then(function(answers) {
+      ]).then(answers => {
         const wrapOptions = {
           trim: true,
           newline: '\n',
