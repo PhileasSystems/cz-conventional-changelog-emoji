@@ -1,7 +1,7 @@
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
-    'header-max-length': [2, 'always', 100],
+    'header-max-length': [2, 'always', 150],
     'scope-case': [0, 'always'],
     'type-enum': [
       1,

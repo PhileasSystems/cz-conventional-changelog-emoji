@@ -3,6 +3,8 @@ const map = require('lodash.map');
 const longest = require('longest');
 const rightPad = require('right-pad');
 
+const { loadCommitLintConfig } = require('./lib/utils');
+
 // This can be any kind of SystemJS compatible module.
 // We use Commonjs here, but ES6 or AMD would do just
 // fine.
@@ -16,7 +18,8 @@ module.exports = options => {
       value: key,
     };
   });
-
+  const commitLintConfig = loadCommitLintConfig();
+  const headerMaxLength = commitLintConfig.rules['header-max-length'][2];
   return {
     // When a user runs `git cz`, prompter will
     // be executed. We pass you cz, which currently
@@ -30,10 +33,8 @@ module.exports = options => {
     // By default, we'll de-indent your commit
     // template and will keep empty lines.
     prompter(cz, commit) {
-      console.log(JSON.stringify(cz, null, 2));
-      console.log(JSON.stringify(commit, null, 2));
       console.log(
-        '\nLine 1 will be cropped at 100 characters. All other lines will be wrapped after 100 characters.\n',
+        `\nLine 1 will be cropped at ${headerMaxLength} characters. All other lines will be wrapped after ${headerMaxLength} characters.\n`,
       );
 
       // Let's ask some questions of the user
@@ -71,13 +72,11 @@ module.exports = options => {
           message: 'List any breaking changes or issues closed by this change:\n',
         },
       ]).then(function(answers) {
-        const maxLineWidth = 200;
-
         const wrapOptions = {
           trim: true,
           newline: '\n',
           indent: '',
-          width: maxLineWidth,
+          width: headerMaxLength,
         };
 
         // parentheses are only needed when a scope is present
@@ -91,13 +90,15 @@ module.exports = options => {
           `${answers.subject.trim()}`.charAt(0).toUpperCase() +
           `${answers.subject.trim()}`.slice(1);
         // Hard limit this line
-        const head = `${answers.type + scope}: ${emoji} ${shortDescription}`.slice(0, maxLineWidth);
+        const head = `${answers.type + scope}: ${emoji} ${shortDescription}`;
+        const headSliced = head.slice(0, headerMaxLength);
+        const headWrapped = head.slice(headerMaxLength);
 
-        // Wrap these lines at 100 characters
-        const body = wrap(answers.body, wrapOptions);
+        // Wrap these lines at headerMaxLength characters
+        const body = wrap(answers.body, wrapOptions).replace('  ', '\n');
         const footer = wrap(answers.footer, wrapOptions);
 
-        commit(`${head}\n\n${body}\n\n${footer}`);
+        commit([headSliced, `${headWrapped}\n${body}`, footer].join('\n\n'));
       });
     },
   };
