@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/PhileasSystems/cz-conventional-changelog-emoji/compare/v0.0.8...v0.0.9) (2019-08-07)
+
+
+### Features
+
+* **engine:** ✨ Follow commit lint header max length rule and wrap body according to double spaces ([48cc9d3](https://github.com/PhileasSystems/cz-conventional-changelog-emoji/commit/48cc9d3))
+
 ### [0.0.8](https://github.com/PhileasSystems/cz-conventional-changelog-emoji/compare/v0.0.7...v0.0.8) (2019-08-07)
 
 
