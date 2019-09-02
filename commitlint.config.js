@@ -19,6 +19,7 @@ module.exports = {
         'chore',
         'revert',
         'review',
+        'release',
         'upgrade',
         'downgrade',
         'deployment',

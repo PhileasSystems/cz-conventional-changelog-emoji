@@ -16,6 +16,9 @@ module.exports = engine({
     deployment: {
       description: '🌈  Deploying stuff to remote environment',
     },
+    release: {
+      description: '🔖  New version release',
+    },
     hotfix: {
       description: '🚑  Critical hotfix',
     },
